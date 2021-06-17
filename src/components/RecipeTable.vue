@@ -1,6 +1,6 @@
 <template>
   <div class="recipe-table">
-
+    <!-- TABLE HEADER -->
     <div class="header">
       <div class="filter">
         <input class="input" v-model="currentFilter" placeholder="Filter Recipes">
@@ -51,11 +51,20 @@
         </div>
       </div>
     </div>
+
+    <!-- RENDER LIST -->
     <Recipe
       v-for="(recipe, i) in sortedData"
       :key="`recipe_${i}`"
       :recipe="recipe"
     />
+
+    <!-- NO RESULTS DISPLAY -->
+    <div v-if="sortedData.length === 0" class="no-results">
+      <i class="material-icons">thumb_down</i>
+      <h2 class="header">No Results</h2>
+      <p class="subtitle">Try searching for something else</p>
+    </div>
   </div>
 </template>
 
@@ -116,6 +125,10 @@ export default defineComponent({
   margin: auto;
   margin-bottom: 128px;
 
+  display: grid;
+  grid-template-rows: 104px auto;
+
+  // HEADER
   > .header {
     background: hsl(220,10%,20%);
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
@@ -178,6 +191,21 @@ export default defineComponent({
         &.-active > .sort-icon { opacity: 1; }
         &.-asc > .sort-icon { transform: translate(-50%, 0%) rotate(180deg); }
       }
+    }
+  }
+
+  // NO RESULTS DISPLAY
+  > .no-results {
+    text-align: center;
+    padding: 128px;
+
+    > .material-icons, > .header, >.subtitle {
+      color: hsl(220,10%,50%);
+    }
+
+    > .material-icons { font-size: 128px; }
+    > .header, > .subtitle {
+      margin: 0;
     }
   }
 }
