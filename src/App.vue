@@ -30,7 +30,10 @@ body { margin: 0; }
 #app {
   margin: 0;
   height: 100vh;
-  background: hsl(220,10%,12%);
+  background:
+    linear-gradient(200deg, hsla(220, 10%, 10%, 0.6), hsla(220, 10%, 10%, 0.8)),
+    url('./assets/background.jpg');
+  background-size: cover;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow: auto;
