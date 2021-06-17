@@ -42,7 +42,7 @@ export class Ingredient {
 
 export interface IRecipe {
   name: string;
-  ingredients: Ingredient[];
+  ingredients: Ingredient[][];
   hunger: number;
   health: number;
   sanity: number;
@@ -52,10 +52,12 @@ export const RecipeList: IRecipe[] = [
   {
     name: 'Waffles',
     ingredients: [
-      Ingredient.Butter,
-      Ingredient.Egg,
-      Ingredient.Berries,
-      Ingredient.Twig
+      [
+        Ingredient.Butter,
+        Ingredient.Egg,
+        Ingredient.Berries,
+        Ingredient.Twig
+      ]
     ],
     hunger: 37.5,
     health: 60,
@@ -63,10 +65,12 @@ export const RecipeList: IRecipe[] = [
   }, {
     name: 'Flower Salad',
     ingredients: [
-      Ingredient.CactusFlower,
-      Ingredient.CactusFlesh,
-      Ingredient.CactusFlesh,
-      Ingredient.CactusFlesh
+      [
+        Ingredient.CactusFlower,
+        Ingredient.CactusFlesh,
+        Ingredient.CactusFlesh,
+        Ingredient.CactusFlesh
+      ]
     ],
     hunger: 12.5,
     health: 40,
@@ -74,21 +78,17 @@ export const RecipeList: IRecipe[] = [
   }, {
     name: 'Fishsticks',
     ingredients: [
-      Ingredient.MonsterMeat,
-      Ingredient.MonsterMeat,
-      Ingredient.Fish,
-      Ingredient.Twig
-    ],
-    hunger: 37.5,
-    health: 40,
-    sanity: 5
-  }, {
-    name: 'Fishsticks',
-    ingredients: [
-      Ingredient.Ice,
-      Ingredient.Ice,
-      Ingredient.Fish,
-      Ingredient.Twig
+      [
+        Ingredient.MonsterMeat,
+        Ingredient.MonsterMeat,
+        Ingredient.Fish,
+        Ingredient.Twig
+      ], [
+        Ingredient.Ice,
+        Ingredient.Ice,
+        Ingredient.Fish,
+        Ingredient.Twig
+      ]
     ],
     hunger: 37.5,
     health: 40,
@@ -96,10 +96,12 @@ export const RecipeList: IRecipe[] = [
   }, {
     name: 'Pierogi',
     ingredients: [
-      Ingredient.MonsterMeat,
-      Ingredient.Egg,
-      Ingredient.RedCapMushroom,
-      Ingredient.RedCapMushroom
+      [
+        Ingredient.MonsterMeat,
+        Ingredient.Egg,
+        Ingredient.RedCapMushroom,
+        Ingredient.RedCapMushroom
+      ]
     ],
     hunger: 37.5,
     health: 40,
@@ -107,10 +109,12 @@ export const RecipeList: IRecipe[] = [
   }, {
     name: 'Trail Mix',
     ingredients: [
-      Ingredient.RoastedBirchnut,
-      Ingredient.Berries,
-      Ingredient.Berries,
-      Ingredient.Twig
+      [
+        Ingredient.RoastedBirchnut,
+        Ingredient.Berries,
+        Ingredient.Berries,
+        Ingredient.Twig
+      ]
     ],
     hunger: 12.5,
     health: 30,
@@ -118,10 +122,12 @@ export const RecipeList: IRecipe[] = [
   }, {
     name: 'Honey Nuggets',
     ingredients: [
-      Ingredient.MonsterMeat,
-      Ingredient.Honey,
-      Ingredient.Ice,
-      Ingredient.Ice
+      [
+        Ingredient.MonsterMeat,
+        Ingredient.Honey,
+        Ingredient.Ice,
+        Ingredient.Ice
+      ]
     ],
     hunger: 37.5,
     health: 20,
@@ -129,21 +135,17 @@ export const RecipeList: IRecipe[] = [
   }, {
     name: 'Fruit Medley',
     ingredients: [
-      Ingredient.Watermelon,
-      Ingredient.Watermelon,
-      Ingredient.Watermelon,
-      Ingredient.Twig
-    ],
-    hunger: 25,
-    health: 20,
-    sanity: 5
-  }, {
-    name: 'Fruit Medley',
-    ingredients: [
-      Ingredient.Durian,
-      Ingredient.Durian,
-      Ingredient.Durian,
-      Ingredient.Twig
+      [
+        Ingredient.Watermelon,
+        Ingredient.Watermelon,
+        Ingredient.Watermelon,
+        Ingredient.Twig
+      ], [
+        Ingredient.Durian,
+        Ingredient.Durian,
+        Ingredient.Durian,
+        Ingredient.Twig
+      ]
     ],
     hunger: 25,
     health: 20,
@@ -151,10 +153,12 @@ export const RecipeList: IRecipe[] = [
   }, {
     name: 'Spicy Chili',
     ingredients: [
-      Ingredient.Morsels,
-      Ingredient.MonsterMeat,
-      Ingredient.CactusFlesh,
-      Ingredient.CactusFlesh
+      [
+        Ingredient.Morsels,
+        Ingredient.MonsterMeat,
+        Ingredient.CactusFlesh,
+        Ingredient.CactusFlesh
+      ]
     ],
     hunger: 37.5,
     health: 20,
@@ -162,10 +166,12 @@ export const RecipeList: IRecipe[] = [
   }, {
     name: 'Ice Cream',
     ingredients: [
-      Ingredient.Dairy,
-      Ingredient.Ice,
-      Ingredient.Sweetener,
-      Ingredient.Sweetener
+      [
+        Ingredient.Dairy,
+        Ingredient.Ice,
+        Ingredient.Sweetener,
+        Ingredient.Sweetener
+      ]
     ],
     hunger: 25,
     health: 0,
@@ -173,10 +179,12 @@ export const RecipeList: IRecipe[] = [
   }, {
     name: 'Melonsicle',
     ingredients: [
-      Ingredient.Watermelon,
-      Ingredient.Ice,
-      Ingredient.Twig,
-      Ingredient.Twig
+      [
+        Ingredient.Watermelon,
+        Ingredient.Ice,
+        Ingredient.Twig,
+        Ingredient.Twig
+      ]
     ],
     hunger: 12.5,
     health: 3,
@@ -184,10 +192,12 @@ export const RecipeList: IRecipe[] = [
   }, {
     name: 'Taffy',
     ingredients: [
-      Ingredient.Honey,
-      Ingredient.Honey,
-      Ingredient.Honey,
-      Ingredient.Twig
+      [
+        Ingredient.Honey,
+        Ingredient.Honey,
+        Ingredient.Honey,
+        Ingredient.Twig
+      ]
     ],
     hunger: 25,
     health: -3,
@@ -195,10 +205,12 @@ export const RecipeList: IRecipe[] = [
   }, {
     name: 'Mandrake Soup',
     ingredients: [
-      Ingredient.Mandrake,
-      Ingredient.Twig,
-      Ingredient.Twig,
-      Ingredient.Twig
+      [
+        Ingredient.Mandrake,
+        Ingredient.Twig,
+        Ingredient.Twig,
+        Ingredient.Twig
+      ]
     ],
     hunger: 150,
     health: 100,
@@ -206,21 +218,17 @@ export const RecipeList: IRecipe[] = [
   }, {
     name: 'Meaty Stew',
     ingredients: [
-      Ingredient.MonsterMeat,
-      Ingredient.Meat,
-      Ingredient.Morsel,
-      Ingredient.Morsel
-    ],
-    hunger: 150,
-    health: 12,
-    sanity: 5
-  }, {
-    name: 'Meaty Stew',
-    ingredients: [
-      Ingredient.Meat,
-      Ingredient.Meat,
-      Ingredient.MonsterMeat,
-      Ingredient.RedCapMushroom
+      [
+        Ingredient.MonsterMeat,
+        Ingredient.Meat,
+        Ingredient.Morsel,
+        Ingredient.Morsel
+      ], [
+        Ingredient.Meat,
+        Ingredient.Meat,
+        Ingredient.MonsterMeat,
+        Ingredient.RedCapMushroom
+      ]
     ],
     hunger: 150,
     health: 12,
@@ -228,10 +236,12 @@ export const RecipeList: IRecipe[] = [
   }, {
     name: 'Dragonpie',
     ingredients: [
-      Ingredient.DragonFruit,
-      Ingredient.Twig,
-      Ingredient.Twig,
-      Ingredient.Twig
+      [
+        Ingredient.DragonFruit,
+        Ingredient.Twig,
+        Ingredient.Twig,
+        Ingredient.Twig
+      ]
     ],
     hunger: 75,
     health: 40,
@@ -239,32 +249,22 @@ export const RecipeList: IRecipe[] = [
   }, {
     name: 'Honey Ham',
     ingredients: [
-      Ingredient.MonsterMeat,
-      Ingredient.Morsel,
-      Ingredient.Morsel,
-      Ingredient.Honey
-    ],
-    hunger: 75,
-    health: 30,
-    sanity: 5
-  }, {
-    name: 'Honey Ham',
-    ingredients: [
-      Ingredient.MonsterMeat,
-      Ingredient.Meat,
-      Ingredient.Honey,
-      Ingredient.Honey
-    ],
-    hunger: 75,
-    health: 30,
-    sanity: 5
-  }, {
-    name: 'Honey Ham',
-    ingredients: [
-      Ingredient.MonsterMeat,
-      Ingredient.Meat,
-      Ingredient.Ice,
-      Ingredient.Honey
+      [
+        Ingredient.MonsterMeat,
+        Ingredient.Morsel,
+        Ingredient.Morsel,
+        Ingredient.Honey
+      ], [
+        Ingredient.MonsterMeat,
+        Ingredient.Meat,
+        Ingredient.Honey,
+        Ingredient.Honey
+      ], [
+        Ingredient.MonsterMeat,
+        Ingredient.Meat,
+        Ingredient.Ice,
+        Ingredient.Honey
+      ]
     ],
     hunger: 75,
     health: 30,
@@ -272,32 +272,17 @@ export const RecipeList: IRecipe[] = [
   }, {
     name: 'Bacon and Eggs',
     ingredients: [
-      Ingredient.Morsel,
-      Ingredient.MonsterMeat,
-      Ingredient.Egg,
-      Ingredient.Egg
-    ],
-    hunger: 75,
-    health: 20,
-    sanity: 5
-  }, {
-    name: 'Bacon and Eggs',
-    ingredients: [
-      Ingredient.MonsterMeat,
-      Ingredient.MonsterMeat,
-      Ingredient.TallbirdEgg,
-      Ingredient.Twig
-    ],
-    hunger: 75,
-    health: 20,
-    sanity: 5
-  }, {
-    name: 'Turkey Dinner',
-    ingredients: [
-      Ingredient.Drumstick,
-      Ingredient.Drumstick,
-      Ingredient.MonsterMeat,
-      Ingredient.Berries
+      [
+        Ingredient.Morsel,
+        Ingredient.MonsterMeat,
+        Ingredient.Egg,
+        Ingredient.Egg
+      ], [
+        Ingredient.MonsterMeat,
+        Ingredient.MonsterMeat,
+        Ingredient.TallbirdEgg,
+        Ingredient.Twig
+      ]
     ],
     hunger: 75,
     health: 20,
@@ -305,65 +290,50 @@ export const RecipeList: IRecipe[] = [
   }, {
     name: 'Turkey Dinner',
     ingredients: [
-      Ingredient.Drumstick,
-      Ingredient.Drumstick,
-      Ingredient.Drumstick,
-      Ingredient.Berries
+      [
+        Ingredient.Drumstick,
+        Ingredient.Drumstick,
+        Ingredient.MonsterMeat,
+        Ingredient.Berries
+      ], [
+        Ingredient.Drumstick,
+        Ingredient.Drumstick,
+        Ingredient.Drumstick,
+        Ingredient.Berries
+      ], [
+        Ingredient.Drumstick,
+        Ingredient.Drumstick,
+        Ingredient.MonsterMeat,
+        Ingredient.CactusFlesh
+      ]
     ],
     hunger: 75,
     health: 20,
     sanity: 5
   }, {
-    name: 'Turkey Dinner',
-    ingredients: [
-      Ingredient.Drumstick,
-      Ingredient.Drumstick,
-      Ingredient.MonsterMeat,
-      Ingredient.CactusFlesh
-    ],
-    hunger: 75,
-    health: 20,
-    sanity: 5
-  }, {
     name: 'Meatballs',
     ingredients: [
-      Ingredient.Morsel,
-      Ingredient.Berries,
-      Ingredient.Berries,
-      Ingredient.Berries
-    ],
-    hunger: 32.5,
-    health: 30,
-    sanity: 5
-  }, {
-    name: 'Meatballs',
-    ingredients: [
-      Ingredient.MonsterMeat,
-      Ingredient.Egg,
-      Ingredient.Egg,
-      Ingredient.Egg
-    ],
-    hunger: 32.5,
-    health: 30,
-    sanity: 5
-  }, {
-    name: 'Meatballs',
-    ingredients: [
-      Ingredient.MonsterMeat,
-      Ingredient.RedCapMushroom,
-      Ingredient.RedCapMushroom,
-      Ingredient.RedCapMushroom
-    ],
-    hunger: 32.5,
-    health: 30,
-    sanity: 5
-  }, {
-    name: 'Meatballs',
-    ingredients: [
-      Ingredient.MonsterMeat,
-      Ingredient.Ice,
-      Ingredient.Ice,
-      Ingredient.Ice
+      [
+        Ingredient.Morsel,
+        Ingredient.Berries,
+        Ingredient.Berries,
+        Ingredient.Berries
+      ], [
+        Ingredient.MonsterMeat,
+        Ingredient.Egg,
+        Ingredient.Egg,
+        Ingredient.Egg
+      ], [
+        Ingredient.MonsterMeat,
+        Ingredient.RedCapMushroom,
+        Ingredient.RedCapMushroom,
+        Ingredient.RedCapMushroom
+      ], [
+        Ingredient.MonsterMeat,
+        Ingredient.Ice,
+        Ingredient.Ice,
+        Ingredient.Ice
+      ]
     ],
     hunger: 32.5,
     health: 30,
@@ -371,32 +341,22 @@ export const RecipeList: IRecipe[] = [
   }, {
     name: 'Froggle Bunwich',
     ingredients: [
-      Ingredient.FrogLegs,
-      Ingredient.Carrot,
-      Ingredient.Twig,
-      Ingredient.Twig
-    ],
-    hunger: 37.5,
-    health: 20,
-    sanity: 5
-  }, {
-    name: 'Froggle Bunwich',
-    ingredients: [
-      Ingredient.FrogLegs,
-      Ingredient.RedCapMushroom,
-      Ingredient.Twig,
-      Ingredient.Twig
-    ],
-    hunger: 37.5,
-    health: 20,
-    sanity: 5
-  }, {
-    name: 'Froggle Bunwich',
-    ingredients: [
-      Ingredient.FrogLegs,
-      Ingredient.CactusFlesh,
-      Ingredient.Twig,
-      Ingredient.Twig
+      [
+        Ingredient.FrogLegs,
+        Ingredient.Carrot,
+        Ingredient.Twig,
+        Ingredient.Twig
+      ], [
+        Ingredient.FrogLegs,
+        Ingredient.RedCapMushroom,
+        Ingredient.Twig,
+        Ingredient.Twig
+      ], [
+        Ingredient.FrogLegs,
+        Ingredient.CactusFlesh,
+        Ingredient.Twig,
+        Ingredient.Twig
+      ]
     ],
     hunger: 37.5,
     health: 20,
@@ -404,32 +364,22 @@ export const RecipeList: IRecipe[] = [
   }, {
     name: 'Butter Muffin',
     ingredients: [
-      Ingredient.ButterflyWings,
-      Ingredient.Carrot,
-      Ingredient.Twig,
-      Ingredient.Twig
-    ],
-    hunger: 37.5,
-    health: 20,
-    sanity: 5
-  }, {
-    name: 'Butter Muffin',
-    ingredients: [
-      Ingredient.ButterflyWings,
-      Ingredient.RedCapMushroom,
-      Ingredient.Twig,
-      Ingredient.Twig
-    ],
-    hunger: 37.5,
-    health: 20,
-    sanity: 5
-  }, {
-    name: 'Butter Muffin',
-    ingredients: [
-      Ingredient.ButterflyWings,
-      Ingredient.CactusFlesh,
-      Ingredient.Twig,
-      Ingredient.Twig
+      [
+        Ingredient.ButterflyWings,
+        Ingredient.Carrot,
+        Ingredient.Twig,
+        Ingredient.Twig
+      ], [
+        Ingredient.ButterflyWings,
+        Ingredient.RedCapMushroom,
+        Ingredient.Twig,
+        Ingredient.Twig
+      ], [
+        Ingredient.ButterflyWings,
+        Ingredient.CactusFlesh,
+        Ingredient.Twig,
+        Ingredient.Twig
+      ]
     ],
     hunger: 37.5,
     health: 20,
@@ -437,10 +387,12 @@ export const RecipeList: IRecipe[] = [
   }, {
     name: 'Guacamole',
     ingredients: [
-      Ingredient.Moleworm,
-      Ingredient.CactusFlesh,
-      Ingredient.Twig,
-      Ingredient.Twig
+      [
+        Ingredient.Moleworm,
+        Ingredient.CactusFlesh,
+        Ingredient.Twig,
+        Ingredient.Twig
+      ]
     ],
     hunger: 37.5,
     health: 20,

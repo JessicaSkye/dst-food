@@ -7,14 +7,20 @@
     </div>
 
     <!-- RECIPE INGREDIENTS -->
-    <div class="ingredients">
-      <a
-        v-for="(ingredient, i) in recipe.ingredients"
-        :key="`recipe_${recipe.name}_ingredient_${i}`"
-        :href="ingredient.url"
+    <div class="recipes">
+      <div
+        class="recipe"
+        v-for="(recipelist, r) in recipe.ingredients"
+        :key="`recipe_${recipe.name}_recipelist_${r}`"
       >
-        <img :src="require(`@/assets/items/${ingredient.name}.png`)">
-      </a>
+        <a
+          v-for="(ingredient, i) in recipelist"
+          :key="`recipe_${recipe.name}_recipelist_${r}_ingredient_${i}`"
+          :href="ingredient.url"
+        >
+          <img :src="require(`@/assets/items/${ingredient.name}.png`)">
+        </a>
+      </div>
     </div>
 
     <!-- HUNGER -->
@@ -48,8 +54,11 @@ export default defineComponent({
   display: grid;
   grid-template-columns: 280px 288px 1fr 1fr 1fr;
 
-  > div { background: hsl(220,10%,10%); }
-  > .ingredients, > .title { padding: 0 16px; }
+  > div {
+    background: hsl(220,10%,10%);
+    padding: 8px 0;
+  }
+  > .recipe, > .title { padding: 0 16px; }
 
   > .title {
     display: grid;

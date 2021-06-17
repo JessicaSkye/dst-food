@@ -119,14 +119,16 @@ export default defineComponent({
     sortedData (): IRecipe[] {
       const res = this.data
       return res.sort((a, b) => {
+        // Sort Data
         const modifier = this.currentSortDir === 'desc' ? -1 : 1
         if (a[this.currentSort] < b[this.currentSort]) return -1 * modifier
         if (a[this.currentSort] > b[this.currentSort]) return 1 * modifier
         return 0
       }).filter((r) => {
+        // Filter Data
         if (r.name.toLowerCase().includes(this.currentFilter.toLowerCase())) return true
 
-        return r.ingredients.some(ingredient => {
+        return r.ingredients[0].some(ingredient => {
           if (ingredient.name.toLowerCase().includes(this.currentFilter.toLowerCase())) return true
           return false
         })
@@ -150,6 +152,8 @@ export default defineComponent({
 
   display: grid;
   grid-template-rows: 104px auto;
+
+  box-shadow: 0 16px 32px rgba(0,0,0,0.2);
 
   &.-lockheader {
     grid-template-rows: auto;
@@ -228,6 +232,16 @@ export default defineComponent({
           &.-active > .sort-icon { opacity: 1; }
           &.-asc > .sort-icon { transform: translate(-50%, 0%) rotate(180deg); }
         }
+      }
+    }
+  }
+
+  > .recipe-item {
+    border-bottom: 1px solid hsl(220, 10%, 20%);
+    &:nth-child(odd) {
+      background: hsla(220, 10%, 50%, 0.05);
+      > .title, > .recipes {
+        background: hsl(220,10%,12%);
       }
     }
   }
