@@ -4,13 +4,16 @@
     <div class="header">
       <div class="filter">
         <input class="input" v-model="currentFilter" placeholder="Filter Recipes">
-        <div class="count">{{ sortedData.length }} results</div>
+        <div class="count">
+          {{ sortedData.length }} result<template v-if="sortedData.length !== 1">s</template>
+        </div>
       </div>
 
       <div class="columns">
         <div>Item Name</div>
         <div>Ingredients</div>
 
+        <!-- HUNGER HEADER -->
         <div
           class="-center -clickable"
           :class="{
@@ -24,6 +27,7 @@
           <i class="material-icons sort-icon">arrow_drop_down</i>
         </div>
 
+        <!-- HEALTH HEADER -->
         <div
           class="-center -clickable"
           :class="{
@@ -37,6 +41,7 @@
           <i class="material-icons sort-icon">arrow_drop_down</i>
         </div>
 
+        <!-- SANITY HEADER -->
         <div
           class="-center -clickable"
           :class="{
