@@ -58,7 +58,7 @@ export default defineComponent({
     background: hsl(220,10%,10%);
     padding: 8px 0;
   }
-  > .recipe, > .title { padding: 0 16px; }
+  > .recipes, > .title { padding: 8px 16px; }
 
   > .title {
     display: grid;
