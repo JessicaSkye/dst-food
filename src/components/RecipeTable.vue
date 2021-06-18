@@ -128,10 +128,18 @@ export default defineComponent({
         // Filter Data
         if (r.name.toLowerCase().includes(this.currentFilter.toLowerCase())) return true
 
-        return r.ingredients[0].some(ingredient => {
-          if (ingredient.name.toLowerCase().includes(this.currentFilter.toLowerCase())) return true
-          return false
-        })
+        // Loop through all recipes
+        for (let i = 0; i < r.ingredients.length; i++) {
+          // Check if the current recipe contains filter content
+          const contains = r.ingredients[i].some(ingredient => {
+            if (ingredient.name.toLowerCase().includes(this.currentFilter.toLowerCase())) return true
+            else return false
+          })
+
+          // If it contains, return true
+          if (contains) return true
+          continue // otherwise continue loop
+        }
       })
     }
   },
